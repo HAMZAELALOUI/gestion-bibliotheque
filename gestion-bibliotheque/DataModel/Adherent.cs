@@ -16,6 +16,6 @@ namespace gestion_bibliotheque.DataModel
         public string Adresse { get; set; }
         public string MotDePasse { get; set; }
         public DateTime DateInscription { get; set; }
-        public string AutresDetailsAdherent { get; set; }
+        public string AutresDetailsAdherent { get; set;}
     }
 }

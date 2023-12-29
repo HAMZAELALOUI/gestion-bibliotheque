@@ -31,7 +31,7 @@
         </Grid.ColumnDefinitions>
 
         <!--Left Section-->
-        <Border Background="#07BF96" CornerRadius="10 0 0 10" ClipToBounds="True" Margin="0,0,7,7">
+        <Border Background="#07BF96" CornerRadius="10 0 0 10" ClipToBounds="True" Margin="0,0,456,4" Grid.ColumnSpan="2">
             <Border.Clip>
                 <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,400,605"/>
             </Border.Clip>
@@ -97,9 +97,10 @@
                 <!--Inputs-->
                 <StackPanel VerticalAlignment="Center" Margin="75 0">
                     <TextBox BorderThickness="0 0 0 1.5" BorderBrush="#C5C8CC" materialDesign:HintAssist.FloatingOffset="0,-20" materialDesign:HintAssist.Hint="Nom" Text="" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <TextBox BorderThickness="0 0 0 1.5" BorderBrush="#C5C8CC" materialDesign:HintAssist.FloatingOffset="0,-20" materialDesign:HintAssist.Hint="Email" Text="" Margin="0 27 0 27" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <TextBox BorderThickness="0 0 0 1.5" BorderBrush="#C5C8CC" materialDesign:HintAssist.FloatingOffset="0,-20" materialDesign:HintAssist.Hint="téléphone" Text="" Margin="0 27 0 27" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <TextBox BorderThickness="0 0 0 1.5" BorderBrush="#C5C8CC" materialDesign:HintAssist.FloatingOffset="0,-20" materialDesign:HintAssist.Hint="Metier" Text="" Margin="0 27 0 27" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <TextBox BorderThickness="0 0 0 1.5" BorderBrush="#C5C8CC" materialDesign:HintAssist.FloatingOffset="0,-20" materialDesign:HintAssist.Hint="Prenom" Text="" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <TextBox BorderThickness="0 0 0 1.5" BorderBrush="#C5C8CC" materialDesign:HintAssist.FloatingOffset="0,-20" materialDesign:HintAssist.Hint="Email" Text="" Margin="0 27 0 27" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  />
+                    <TextBox BorderThickness="0 0 0 1.5" BorderBrush="#C5C8CC" materialDesign:HintAssist.FloatingOffset="0,-20" materialDesign:HintAssist.Hint="téléphone" Text="" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                    <TextBox BorderThickness="0 0 0 1.5" BorderBrush="#C5C8CC" materialDesign:HintAssist.FloatingOffset="0,-20" materialDesign:HintAssist.Hint="Adress" Text="" Margin="0 27 0 27" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                     <PasswordBox BorderThickness="0 0 0 1.5" BorderBrush="#C5C8CC" materialDesign:HintAssist.FloatingOffset="0,-18" materialDesign:HintAssist.Hint="mot de passe" Password="" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
                     <PasswordBox BorderThickness="0 0 0 1.5" BorderBrush="#C5C8CC" materialDesign:HintAssist.FloatingOffset="0,-18" materialDesign:HintAssist.Hint="Répéter le mot de passe" Password="" Margin="0 27 0 0" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
 

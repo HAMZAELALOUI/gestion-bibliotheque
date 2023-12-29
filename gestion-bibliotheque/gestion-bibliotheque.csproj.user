@@ -10,4 +10,26 @@
     <FallbackCulture>en-US</FallbackCulture>
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="View\InputForm\InputFormAdherentAdd.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\InputForm\UserControls\DetailCard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\InputForm\UserControls\MyTextBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="View\InputForm\InputFormAdherentAdd.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\InputForm\UserControls\DetailCard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\InputForm\UserControls\MyTextBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
 </Project>

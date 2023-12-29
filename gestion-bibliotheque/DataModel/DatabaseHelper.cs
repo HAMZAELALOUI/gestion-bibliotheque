@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+using System.Windows;
+using gestion_bibliotheque.View;
+using MySqlConnector;
+// Your DatabaseHelper.cs file
+using gestion_bibliotheque.View.InputForm.UserControls; // Add the correct namespace
 
 
 namespace gestion_bibliotheque.DataModel
@@ -47,6 +51,90 @@ namespace gestion_bibliotheque.DataModel
 
             return adherents;
         }
+
+
+
+        public void DeleteAdherentById(int adherentId)
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    // Construct the SQL command
+                    string sql = "DELETE FROM Adherents WHERE AdherentID = @AdherentID";
+
+                    using (MySqlCommand command = new MySqlCommand(sql, connection))
+                    {
+                        // Add parameters to the SQL command
+                        command.Parameters.AddWithValue("@AdherentID", adherentId);
+
+                        // Execute the SQL command
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show($"Adherent with ID {adherentId} deleted successfully.");
+                        }
+                        else
+                        {
+                            MessageBox.Show($"No adherent found with ID {adherentId}.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        public void InsertAdherentData(string prenom, string nom, string email, string numeroTelephone, string adresse, string motDePasse, DateTime dateInscription, string autresDetailsAdherent)
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    // Your SQL query to insert data
+                    string sqlQuery = "INSERT INTO Adherents (Prenom, Nom, Email, NumeroTelephone, Adresse, MotDePasse, DateInscription, AutresDetailsAdherent) " +
+                                      "VALUES (@Prenom, @Nom, @Email, @NumeroTelephone, @Adresse, @MotDePasse, @DateInscription, @AutresDetailsAdherent)";
+
+                    using (MySqlCommand command = new MySqlCommand(sqlQuery, connection))
+                    {
+                        // Set parameters
+                        command.Parameters.AddWithValue("@Prenom", prenom);
+                        command.Parameters.AddWithValue("@Nom", nom);
+                        command.Parameters.AddWithValue("@Email", email);
+                        command.Parameters.AddWithValue("@NumeroTelephone", numeroTelephone);
+                        command.Parameters.AddWithValue("@Adresse", adresse);
+                        command.Parameters.AddWithValue("@MotDePasse", motDePasse);
+                        command.Parameters.AddWithValue("@DateInscription", dateInscription);
+                        command.Parameters.AddWithValue("@AutresDetailsAdherent", autresDetailsAdherent);
+
+                        // Execute the query
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Data inserted successfully.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to insert data.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+        }
+
+
+
     }
 }
 

@@ -28,14 +28,6 @@
       },
       "font-awesome/4.7.0": {},
       "Font.Awesome/5.15.4": {},
-      "FontAwesome.WPF/4.5.0.8": {
-        "runtime": {
-          "lib/net40/FontAwesome.WPF.dll": {
-            "assemblyVersion": "4.5.0.37524",
-            "fileVersion": "4.5.0.8"
-          }
-        }
-      },
       "Google.Protobuf/3.21.9": {
         "runtime": {
           "lib/net5.0/Google.Protobuf.dll": {
@@ -1122,13 +1114,6 @@
       "sha512": "sha512-Okg91rA7RWbd+eKyBNNnvlvzFee7A4yIi0WdTrJMVPos1ntONAVn/m96Ex9qvVXKKiroBZ1vtCXtpFMnHNof1g==",
       "path": "font.awesome/5.15.4",
       "hashPath": "font.awesome.5.15.4.nupkg.sha512"
-    },
-    "FontAwesome.WPF/4.5.0.8": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-edT9YuXB9xpU6mKawZzaz0LRz14APH2fkxkWTDd9WZ1S0ZzJuUuZKsWygKzJrGBoc5G563zhlSHVFcpZyPoK4Q==",
-      "path": "fontawesome.wpf/4.5.0.8",
-      "hashPath": "fontawesome.wpf.4.5.0.8.nupkg.sha512"
     },
     "Google.Protobuf/3.21.9": {
       "type": "package",
