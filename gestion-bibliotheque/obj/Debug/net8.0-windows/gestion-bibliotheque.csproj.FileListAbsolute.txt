@@ -145,3 +145,5 @@ C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-biblioth
 C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\gestion-bibliotheque.pdb
 C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\gestion-bibliotheque.genruntimeconfig.cache
 C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\ref\gestion-bibliotheque.dll
+C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\View\InputForm\InputFormAdherentUpdate.g.cs
+C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\View\InputForm\InputFormAdherentUpdate.baml

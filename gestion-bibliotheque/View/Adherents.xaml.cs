@@ -1,5 +1,6 @@
 ﻿using gestion_bibliotheque.DataModel;
 using gestion_bibliotheque.View.InputForm;
+using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -31,7 +32,7 @@ namespace gestion_bibliotheque.View
             LoadData();
         }
 
-        private void LoadData()
+        public void LoadData()
         {
             List<Adherent> adherents = dbHelper.GetAdherents();
             adherentsCollection = new ObservableCollection<Adherent>(adherents);
@@ -68,6 +69,9 @@ namespace gestion_bibliotheque.View
 
             if (adherentIdToDelete > 0) {
                 dbHelper.DeleteAdherentById(adherentIdToDelete);
+                LoadData();
+
+
             }
             else
             {

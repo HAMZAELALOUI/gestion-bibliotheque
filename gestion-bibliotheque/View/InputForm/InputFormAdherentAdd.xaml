@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:uc="clr-namespace:gestion_bibliotheque.View.InputForm.UserControls"
         xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
-        Width="1150" Height="790" MinWidth="1150" MinHeight="790" WindowStyle="None"
+        Width="1150" Height="500" MinWidth="750" MinHeight="790" WindowStyle="None"
         WindowStartupLocation="CenterScreen" AllowsTransparency="True" Background="Transparent">
 
     <WindowChrome.WindowChrome>
@@ -31,11 +31,11 @@
             <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right" Margin="0 0 15 0">
                 <TextBlock Text="Pour Ajouter un Adherent" Foreground="#374655" VerticalAlignment="Center" FontSize="14" Margin="0 0 65 0"/>
 
-                
 
-               
 
-                
+
+
+
             </StackPanel>
 
             <!--Right Section-->
@@ -44,10 +44,10 @@
 
                     <!--Main Image-->
                     <Border  Width="85" Height="85" Background="Transparent" Margin="15 40 20 20">
-                        
+
                     </Border>
 
-                   
+
 
                     <!--Cards-->
                     <!--<uc:DetailCard Title="Notifications" Time="2 min" Number="6" Image="/Images/p6.jpg"/>-->
@@ -87,7 +87,7 @@
                             <!--Form Title-->
                             <StackPanel Orientation="Horizontal" Margin="20 20 0 0">
                                 <Border CornerRadius="50" BorderThickness="1.5" BorderBrush="#EFEFEF">
-                                   
+
                                 </Border>
 
                                 <TextBlock Text="Ajouter Adherent" Foreground="#374655" FontSize="18" Margin="15 0 0 0" VerticalAlignment="Center"/>
@@ -104,21 +104,23 @@
                                     </Border.BorderBrush>
                                 </Border>
 
-                               
+
                             </StackPanel>
 
                             <Separator Grid.Row="1" Grid.ColumnSpan="2" Height="0.7" Margin="-20 20 -20 20" Background="#E1E6EB"/>
 
                             <!--Inputs-->
                             <!--Inputs-->
-                            <uc:MyTextBox x:Name="txtNom" Grid.Column="0" Grid.Row="2" Caption="Nom" Hint="Entrer Le nom"/>
-                            <uc:MyTextBox x:Name="txtEmail" Grid.Column="0" Grid.Row="3" Caption="Email" Hint="Entrer l'email"/>
-                            <uc:MyTextBox x:Name="txtTelephone" Grid.Column="0" Grid.Row="4" Caption="Telephone" Hint="Numerau de Telephone"/>
-                            <uc:MyTextBox x:Name="txtAddress" Grid.Column="0" Grid.Row="5" Caption="Address " Hint="entrer l'adress"/>
-                            <uc:MyTextBox x:Name="txtPrenom" Grid.Column="1" Grid.Row="2" Caption="Prenom" Hint="Entrer le prenom"/>
-                            <uc:MyTextBox x:Name="txtMotDePasse" Grid.Column="1" Grid.Row="3" Caption="Mot de Pass" Hint="Mot de Pass"/>
-                            <uc:MyTextBox x:Name="dpDateInscription" Grid.Column="1" Grid.Row="4" Caption="Date D'inscription" Hint="aaaa-mm-jj"/>
-                            <uc:MyTextBox x:Name="txtDescription" Grid.Column="1" Grid.Row="5" Caption="Description" Hint="Description"/>
+                            <uc:MyTextBox x:Name="txtNom" Text="{Binding Nom}"  Grid.Column="0" Grid.Row="2" Caption="Nom" Hint="Entrer Le nom"/>
+                            <uc:MyTextBox x:Name="txtEmail" Text="{Binding Email}" Grid.Column="0" Grid.Row="3" Caption="Email" Hint="Entrer l'email"/>
+                            <uc:MyTextBox x:Name="txtTelephone" Text="{Binding Telephone}" Grid.Column="0" Grid.Row="4" Caption="Telephone" Hint="Numerau de Telephone"/>
+                            <uc:MyTextBox x:Name="txtAddress" Text="{Binding Address}" Grid.Column="0" Grid.Row="5" Caption="Address " Hint="entrer l'adress"/>
+                            <uc:MyTextBox x:Name="txtPrenom" Text="{Binding Prenom}"  Grid.Column="1" Grid.Row="2" Caption="Prenom" Hint="Entrer le prenom"/>
+                            <uc:MyTextBox x:Name="txtMotDePasse" Text="{Binding PrenomMotDePasse}" Grid.Column="1" Grid.Row="3" Caption="Mot de Pass" Hint="Mot de Pass"/>
+                            <uc:MyTextBox x:Name="txtDescription" Text="{Binding PrenomMotDePasse}" Grid.Column="1" Grid.Row="3" Caption="Description" Hint="Description" Margin="0,77,0,0" Grid.RowSpan="3"/>
+
+
+
 
 
                             <!--Form Bottom Background-->
@@ -132,7 +134,7 @@
                             </Button>
 
                             <!--Secondary Button-->
-                            <Button Grid.Row="6" Content="Back" HorizontalAlignment="Left" Margin="20 40 0 0" Style="{StaticResource secondaryButton}" Width="150" Cursor="Hand"/>
+                            <Button Grid.Row="6" Content="Retour" HorizontalAlignment="Left" Margin="20 40 0 0" Style="{StaticResource secondaryButton}" Width="150" Cursor="Hand" Click="closeForm"/>
 
                         </Grid>
                     </Border>

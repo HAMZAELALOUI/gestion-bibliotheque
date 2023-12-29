@@ -7,14 +7,16 @@ using System.Windows;
 using gestion_bibliotheque.View;
 using MySqlConnector;
 // Your DatabaseHelper.cs file
-using gestion_bibliotheque.View.InputForm.UserControls; // Add the correct namespace
+using gestion_bibliotheque.View.InputForm.UserControls;
+using System.ComponentModel; // Add the correct namespace
 
 
 namespace gestion_bibliotheque.DataModel
 {
-    public class DatabaseHelper
+    public class DatabaseHelper 
     {
         private const string ConnectionString = "server=localhost;database=biblio;uid=root;password=;";
+        
 
         public List<Adherent> GetAdherents()
         {
@@ -89,7 +91,7 @@ namespace gestion_bibliotheque.DataModel
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-        public void InsertAdherentData(string prenom, string nom, string email, string numeroTelephone, string adresse, string motDePasse, DateTime dateInscription, string autresDetailsAdherent)
+        public void InsertAdherentData(string prenom, string nom, string email, string numeroTelephone, string adresse, string motDePasse, string autresDetailsAdherent)
         {
             try
             {
@@ -99,7 +101,7 @@ namespace gestion_bibliotheque.DataModel
 
                     // Your SQL query to insert data
                     string sqlQuery = "INSERT INTO Adherents (Prenom, Nom, Email, NumeroTelephone, Adresse, MotDePasse, DateInscription, AutresDetailsAdherent) " +
-                                      "VALUES (@Prenom, @Nom, @Email, @NumeroTelephone, @Adresse, @MotDePasse, @DateInscription, @AutresDetailsAdherent)";
+                                      "VALUES (@Prenom, @Nom, @Email, @NumeroTelephone, @Adresse, @MotDePasse, NOW(), @AutresDetailsAdherent)";
 
                     using (MySqlCommand command = new MySqlCommand(sqlQuery, connection))
                     {
@@ -110,7 +112,6 @@ namespace gestion_bibliotheque.DataModel
                         command.Parameters.AddWithValue("@NumeroTelephone", numeroTelephone);
                         command.Parameters.AddWithValue("@Adresse", adresse);
                         command.Parameters.AddWithValue("@MotDePasse", motDePasse);
-                        command.Parameters.AddWithValue("@DateInscription", dateInscription);
                         command.Parameters.AddWithValue("@AutresDetailsAdherent", autresDetailsAdherent);
 
                         // Execute the query
@@ -133,8 +134,7 @@ namespace gestion_bibliotheque.DataModel
             }
         }
 
-
-
+      
     }
 }
 

@@ -1,4 +1,5 @@
-﻿using gestion_bibliotheque.DataModel;
+﻿using ControlzEx.Standard;
+using gestion_bibliotheque.DataModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,7 @@ namespace gestion_bibliotheque.View.InputForm
     /// </summary>
     public partial class InputFormAdherentAdd : Window
     {
+        
         public InputFormAdherentAdd()
         {
             InitializeComponent();
@@ -40,9 +42,30 @@ namespace gestion_bibliotheque.View.InputForm
             }
         }
 
+        private void closeForm(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
         private void OnAjouterButtonClick(object sender, RoutedEventArgs e)
         {
+            
             DatabaseHelper databaseHelper = new DatabaseHelper();
+
+
+
+            // Successfully parsed the date, now you can use dateInscription
+            databaseHelper.InsertAdherentData(
+                txtPrenom.Text,
+                txtNom.Text,
+                txtEmail.Text,
+                txtTelephone.Text,
+                txtAddress.Text,
+                txtMotDePasse.Text,
+                txtDescription.Text
+                );
+            this.Close();
         }
     }
 }
+

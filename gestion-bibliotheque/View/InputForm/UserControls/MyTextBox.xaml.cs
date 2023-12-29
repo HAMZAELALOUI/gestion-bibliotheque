@@ -20,6 +20,21 @@ namespace gestion_bibliotheque.View.InputForm.UserControls
     /// </summary>
     public partial class MyTextBox : UserControl
     {
+        public static readonly DependencyProperty TextProperty =
+            DependencyProperty.Register("Text", typeof(string), typeof(MyTextBox));
+
+        public string Text
+        {
+            get { return (string)GetValue(TextProperty); }
+            set { SetValue(TextProperty, value); }
+        }
+
+
+        /*  public string Text
+          {
+              get { return textBox.Text; }
+              set { textBox.Text = value; }
+          }*/
         public MyTextBox()
         {
             InitializeComponent();
@@ -38,7 +53,7 @@ namespace gestion_bibliotheque.View.InputForm.UserControls
             get { return (string)GetValue(CaptionProperty); }
             set { SetValue(CaptionProperty, value); }
         }
-
+      
         public static readonly DependencyProperty CaptionProperty = DependencyProperty.Register("Caption", typeof(string), typeof(MyTextBox));
 
     }

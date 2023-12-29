@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\App.xaml
-13119432008
+14-2098667174
 
-191448180173
+201935888759
 3582069236154
-MainWindow.xaml;View\AdherentFormUpdate.xaml;View\Adherents.xaml;View\AdminDashboard.xaml;View\AherentConfirmationDialog.xaml;View\AjouterAdherent.xaml;View\Books.xaml;View\Employees.xaml;View\InputForm\InputFormAdherentAdd.xaml;View\InputForm\UserControls\DetailCard.xaml;View\InputForm\UserControls\MyTextBox.xaml;View\LoginView.xaml;View\Reservation.xaml;
+MainWindow.xaml;View\AdherentFormUpdate.xaml;View\Adherents.xaml;View\AdminDashboard.xaml;View\AherentConfirmationDialog.xaml;View\AjouterAdherent.xaml;View\Books.xaml;View\Employees.xaml;View\InputForm\InputFormAdherentAdd.xaml;View\InputForm\InputFormAdherentUpdate.xaml;View\InputForm\UserControls\DetailCard.xaml;View\InputForm\UserControls\MyTextBox.xaml;View\LoginView.xaml;View\Reservation.xaml;
 
 True
 
