@@ -17,9 +17,9 @@ namespace gestion_bibliotheque.View
     /// <summary>
     /// Interaction logic for AjouterAdherent.xaml
     /// </summary>
-    public partial class AjouterAdherent : Window
+    public partial class AjouterEmployee : Window
     {
-        public AjouterAdherent()
+        public AjouterEmployee()
         {
             InitializeComponent();
         }
@@ -49,6 +49,16 @@ namespace gestion_bibliotheque.View
             {
                 this.WindowState = WindowState.Normal;
             }
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

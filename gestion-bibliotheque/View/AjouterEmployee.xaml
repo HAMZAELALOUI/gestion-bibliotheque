@@ -1,4 +1,4 @@
-﻿<Window x:Class="gestion_bibliotheque.View.AjouterAdherent"
+﻿<Window x:Class="gestion_bibliotheque.View.AjouterEmployee"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:gestion_bibliotheque.View"
@@ -39,7 +39,7 @@
             <Grid>
                 <!--Title-->
                 <StackPanel Margin="0 120 0 0" VerticalAlignment="Top">
-                    <TextBlock Text="Ajouter Adherent" FontSize="46" FontWeight="Light" Foreground="#ffffff" TextAlignment="Center"/>
+                    <TextBlock Text="Ajouter Employee" FontSize="46" FontWeight="Light" Foreground="#ffffff" TextAlignment="Center"/>
                 </StackPanel>
 
                 <!--Ellipses-->
@@ -96,13 +96,10 @@
 
                 <!--Inputs-->
                 <StackPanel VerticalAlignment="Center" Margin="75 0">
-                    <TextBox BorderThickness="0 0 0 1.5" BorderBrush="#C5C8CC" materialDesign:HintAssist.FloatingOffset="0,-20" materialDesign:HintAssist.Hint="Nom" Text="" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <TextBox BorderThickness="0 0 0 1.5" BorderBrush="#C5C8CC" materialDesign:HintAssist.FloatingOffset="0,-20" materialDesign:HintAssist.Hint="Prenom" Text="" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <TextBox BorderThickness="0 0 0 1.5" BorderBrush="#C5C8CC" materialDesign:HintAssist.FloatingOffset="0,-20" materialDesign:HintAssist.Hint="Email" Text="" Margin="0 27 0 27" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  />
-                    <TextBox BorderThickness="0 0 0 1.5" BorderBrush="#C5C8CC" materialDesign:HintAssist.FloatingOffset="0,-20" materialDesign:HintAssist.Hint="téléphone" Text="" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-                    <TextBox BorderThickness="0 0 0 1.5" BorderBrush="#C5C8CC" materialDesign:HintAssist.FloatingOffset="0,-20" materialDesign:HintAssist.Hint="Adress" Text="" Margin="0 27 0 27" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <PasswordBox BorderThickness="0 0 0 1.5" BorderBrush="#C5C8CC" materialDesign:HintAssist.FloatingOffset="0,-18" materialDesign:HintAssist.Hint="mot de passe" Password="" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
-                    <PasswordBox BorderThickness="0 0 0 1.5" BorderBrush="#C5C8CC" materialDesign:HintAssist.FloatingOffset="0,-18" materialDesign:HintAssist.Hint="Répéter le mot de passe" Password="" Margin="0 27 0 0" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+                    <TextBox BorderThickness="0 0 0 1.5" BorderBrush="#C5C8CC" materialDesign:HintAssist.FloatingOffset="0,-20" materialDesign:HintAssist.Hint="Nom" Text="" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="TextBox_TextChanged_1" />
+                    <TextBox BorderThickness="0 0 0 1.5" BorderBrush="#C5C8CC" materialDesign:HintAssist.FloatingOffset="0,-20" materialDesign:HintAssist.Hint="Prenom" Text="" Margin="0 27 0 27" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="TextBox_TextChanged"  />
+                    <PasswordBox BorderThickness="0 0 0 1.5" BorderBrush="#C5C8CC" materialDesign:HintAssist.FloatingOffset="0,-18" materialDesign:HintAssist.Hint="Post" Password="" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+                    <PasswordBox BorderThickness="0 0 0 1.5" BorderBrush="#C5C8CC" materialDesign:HintAssist.FloatingOffset="0,-18" materialDesign:HintAssist.Hint="Description" Password="" Margin="0 27 0 0" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
 
                     <StackPanel Orientation="Horizontal" Margin="0 10 0 0" Height="75">
                         <Button Content="Ajouter" Background="#05B790" Foreground="#ffffff" FontSize="18" materialDesign:ButtonAssist.CornerRadius="22" Height="45" Width="117"/>

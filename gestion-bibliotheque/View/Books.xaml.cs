@@ -1,5 +1,6 @@
 ﻿
 using gestion_bibliotheque.DataModel;
+using gestion_bibliotheque.View.InputForm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,7 +39,12 @@ namespace gestion_bibliotheque.View
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
+        }private void ShowLivre(object sender,RoutedEventArgs e)
+        {
+            LivreInputFormAdd livreInputFormAdd = new LivreInputFormAdd();
+            livreInputFormAdd.ShowDialog();
         }
+
 
         private void textBoxFilter_TextChanged(object sender, TextChangedEventArgs e)
         {

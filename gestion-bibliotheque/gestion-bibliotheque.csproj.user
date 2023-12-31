@@ -11,10 +11,22 @@
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="View\AjouterLivreForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\InputForm\InputFormAdherentAdd.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\InputForm\LivreInputFormAdd.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\InputForm\UserControls\DetailCard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\InputForm\UserControls\MyComboBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\InputForm\UserControls\MyDatePicker.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\InputForm\UserControls\MyTextBox.xaml.cs">
@@ -22,10 +34,22 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="View\AjouterLivreForm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\InputForm\InputFormAdherentAdd.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\InputForm\LivreInputFormAdd.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\InputForm\UserControls\DetailCard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\InputForm\UserControls\MyComboBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\InputForm\UserControls\MyDatePicker.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\InputForm\UserControls\MyTextBox.xaml">

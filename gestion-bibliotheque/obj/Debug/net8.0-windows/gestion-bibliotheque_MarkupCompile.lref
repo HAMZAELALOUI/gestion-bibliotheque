@@ -3,12 +3,16 @@
 FC:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\MainWindow.xaml;;
 FC:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\View\Adherents.xaml;;
 FC:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\View\AherentConfirmationDialog.xaml;;
-FC:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\View\AjouterAdherent.xaml;;
+FC:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\View\AjouterEmployee.xaml;;
+FC:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\View\AjouterLivreForm.xaml;;
 FC:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\View\Books.xaml;;
 FC:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\View\Employees.xaml;;
 FC:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\View\InputForm\InputFormAdherentAdd.xaml;;
+FC:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\View\InputForm\LivreInputFormAdd.xaml;;
 FC:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\View\InputForm\UserControls\DetailCard.xaml;;
+FC:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\View\InputForm\UserControls\MyDatePicker.xaml;;
 FC:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\View\InputForm\UserControls\MyTextBox.xaml;;
 FC:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\View\LoginView.xaml;;
 FC:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\View\Reservation.xaml;;
+FC:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\View\InputForm\UserControls\MyComboBox.xaml;;
 
