@@ -22,9 +22,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="View\InputForm\InputFormAdherentUpdate.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="View\InputForm\InputFormAdherentAdd.xaml">
       <SubType>Designer</SubType>
     </Page>

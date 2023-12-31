@@ -23,12 +23,6 @@
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="ViewModel\**" />
-    <EmbeddedResource Remove="ViewModel\**" />
-    <None Remove="ViewModel\**" />
-    <Page Remove="ViewModel\**" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\back-image.jpg" />
     <Resource Include="Images\key-icon.png" />
     <Resource Include="Images\online-library.png" />
@@ -101,10 +95,5 @@
     <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="8.0.0" />
     <PackageReference Include="System.IO.Pipelines" Version="8.0.0" />
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="View\InputForm\InputFormAdherentUpdate.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
 </Project>

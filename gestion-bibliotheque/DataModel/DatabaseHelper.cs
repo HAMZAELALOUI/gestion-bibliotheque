@@ -91,6 +91,8 @@ namespace gestion_bibliotheque.DataModel
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+
         public void InsertAdherentData(string prenom, string nom, string email, string numeroTelephone, string adresse, string motDePasse, string autresDetailsAdherent)
         {
             try
@@ -134,7 +136,39 @@ namespace gestion_bibliotheque.DataModel
             }
         }
 
-      
+
+        public static int GetNumberOfAdherents()
+        {
+            int numberOfAdherents = 0;
+
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    // Your SQL query to get the number of adherents
+                    string sqlQuery = "SELECT COUNT(*) FROM Adherents";
+
+                    using (MySqlCommand command = new MySqlCommand(sqlQuery, connection))
+                    {
+                        // Execute the query and get the result
+                        numberOfAdherents = Convert.ToInt32(command.ExecuteScalar());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+
+            return numberOfAdherents;
+        }
+
     }
+
+
+
+
 }
 

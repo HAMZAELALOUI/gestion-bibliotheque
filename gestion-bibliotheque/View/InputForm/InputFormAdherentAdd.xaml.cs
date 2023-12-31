@@ -1,5 +1,6 @@
 ﻿using ControlzEx.Standard;
 using gestion_bibliotheque.DataModel;
+using gestion_bibliotheque.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,10 +48,15 @@ namespace gestion_bibliotheque.View.InputForm
             this.Close();
         }
 
+
+
+       
+
         private void OnAjouterButtonClick(object sender, RoutedEventArgs e)
         {
             
             DatabaseHelper databaseHelper = new DatabaseHelper();
+            Adherents adherents = new Adherents();
 
 
 

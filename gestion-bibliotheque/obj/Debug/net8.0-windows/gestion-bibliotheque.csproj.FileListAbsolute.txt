@@ -2,7 +2,6 @@ C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-biblioth
 C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\View\AdminDashboard.baml
 C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\App.baml
 C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\MainWindow.g.cs
-C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\View\AdherentFormUpdate.g.cs
 C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\View\Adherents.g.cs
 C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\View\AdminDashboard.g.cs
 C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\View\AherentConfirmationDialog.g.cs
@@ -122,7 +121,6 @@ C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-biblioth
 C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Management.dll
 C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\MainWindow.baml
-C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\View\AdherentFormUpdate.baml
 C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\View\Adherents.baml
 C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\View\AherentConfirmationDialog.baml
 C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\View\AjouterAdherent.baml
@@ -145,5 +143,3 @@ C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-biblioth
 C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\gestion-bibliotheque.pdb
 C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\gestion-bibliotheque.genruntimeconfig.cache
 C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\ref\gestion-bibliotheque.dll
-C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\View\InputForm\InputFormAdherentUpdate.g.cs
-C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\View\InputForm\InputFormAdherentUpdate.baml

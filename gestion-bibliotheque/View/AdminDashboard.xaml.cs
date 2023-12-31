@@ -83,6 +83,13 @@ namespace gestion_bibliotheque.View
             dynamicContent.Content = new Employees();
 
         }
+
+        private void LogOut(object sender, RoutedEventArgs e)
+        {
+            LoginView loginView = new LoginView();
+            loginView.Show();
+            this.Close();
+        }
     }
 
     public class Member

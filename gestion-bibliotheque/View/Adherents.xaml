@@ -46,7 +46,7 @@
         </Button>
 
         <!--Page Title-->
-        <TextBlock Text="Members" Grid.Row="1" FontSize="32" FontWeight="SemiBold" Margin="0 20 0 0" Foreground="#121518" HorizontalAlignment="Left"/>
+        <TextBlock Text="" Grid.Row="1" FontSize="32" FontWeight="SemiBold" Margin="0 20 0 0" Foreground="#121518" HorizontalAlignment="Left"/>
 
         <!--Add Button-->
         <Button Style="{StaticResource addButton}" Click="adherent_form" Cursor="Hand">
@@ -62,7 +62,8 @@
 
 
         <!--Counter Title-->
-        <TextBlock Text="68 Adherents" Grid.Row="4" FontSize="18" FontWeight="SemiBold" Foreground="#121518" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock Text="{Binding NumberOfAdherents, StringFormat='{}{0} Adherents'}" Grid.Row="4" FontSize="18" FontWeight="SemiBold" Foreground="#121518" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
 
         <TextBlock Text="Filtrer par"  Grid.Row="4" FontSize="13" FontWeight="SemiBold" Margin="0 0 215 0" Foreground="#121518" HorizontalAlignment="Right" VerticalAlignment="Center"/>
 
@@ -116,9 +117,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Style="{StaticResource gridEditButton}" Cursor="Hand" Click="closeFormUpdate">
-                                    <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridButtonIcon}"/>
-                                </Button>
+                               
                                 <Button Margin="5 0 0 0" Style="{StaticResource gridRemoveButton}" Cursor="Hand" Click="Delete">
                                     <Icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridButtonIcon}"/>
                                 </Button>

@@ -1,5 +1,6 @@
 ﻿using gestion_bibliotheque.DataModel;
 using gestion_bibliotheque.View.InputForm;
+using gestion_bibliotheque.ViewModel;
 using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,14 @@ namespace gestion_bibliotheque.View
         public Adherents()
         {
             InitializeComponent();
+
+            // Assuming you create an instance of your ViewModel here
+            AherentsViewModel aherentsViewModel = new AherentsViewModel();
+            DataContext = aherentsViewModel;
+            // Set the initial value (replace this with your actual logic)
+            aherentsViewModel.NumberOfAdherents = DatabaseHelper.GetNumberOfAdherents();
             LoadData();
+
         }
 
         public void LoadData()
@@ -48,18 +56,11 @@ namespace gestion_bibliotheque.View
 
         private void adherent_form(object sender, RoutedEventArgs e)
         {
+
             // Open a new window (replace 'MainWindow' with the name of your target window)
             InputFormAdherentAdd inputFormAdherentAdd = new InputFormAdherentAdd();
             inputFormAdherentAdd.ShowDialog();  
         }
-        private void closeFormUpdate(object sender, RoutedEventArgs e)
-        {
-            // Open a new window (replace 'MainWindow' with the name of your target window)
-            AdherentFormUpdate adherentFormUpdate = new AdherentFormUpdate();
-
-            adherentFormUpdate.Show();
-        }
-
         private void Delete(object sender, RoutedEventArgs e)
         {
             /* AherentConfirmationDialog aherentConfirmationDialog = new AherentConfirmationDialog();
@@ -69,16 +70,19 @@ namespace gestion_bibliotheque.View
 
             if (adherentIdToDelete > 0) {
                 dbHelper.DeleteAdherentById(adherentIdToDelete);
+                // Assuming you create an instance of your ViewModel here
+                AherentsViewModel aherentsViewModel = new AherentsViewModel();
+                DataContext = aherentsViewModel;
+                // Set the initial value
+                aherentsViewModel.NumberOfAdherents = DatabaseHelper.GetNumberOfAdherents();
                 LoadData();
-
-
             }
             else
             {
                 MessageBox.Show("Please select an adherent to delete.", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
-        private int GetSelectedAdherentId()
+        public int GetSelectedAdherentId()
         {
             // Check if any item is selected
             if (adherentsDataGrid.SelectedItem != null)
@@ -92,5 +96,6 @@ namespace gestion_bibliotheque.View
 
             return 0; // Return 0 or another value to indicate no selection
         }
+
     }
 }

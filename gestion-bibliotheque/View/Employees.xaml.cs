@@ -43,20 +43,20 @@ namespace gestion_bibliotheque.View
             // Open a new window (replace 'MainWindow' with the name of your target window)
             AjouterAdherent ajouterAdherent = new AjouterAdherent();
 
-            ajouterAdherent.Show();
+            ajouterAdherent.ShowDialog();
         }
         private void closeFormUpdate(object sender, RoutedEventArgs e)
         {
             // Open a new window (replace 'MainWindow' with the name of your target window)
-            AdherentFormUpdate adherentFormUpdate = new AdherentFormUpdate();
+            /*AdherentFormUpdate adherentFormUpdate = new AdherentFormUpdate();
 
-            adherentFormUpdate.Show();
+            adherentFormUpdate.ShowDialog();*/
         }
         private void Delete(object sender, RoutedEventArgs e)
         {
             //AherentConfirmationDialog aherentConfirmationDialog = new AherentConfirmationDialog();
             AherentConfirmationDialog aherentConfirmationDialog = new AherentConfirmationDialog();
-            aherentConfirmationDialog.Show();
+            aherentConfirmationDialog.ShowDialog();
         }
     }
 }
