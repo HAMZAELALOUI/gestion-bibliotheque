@@ -48,6 +48,10 @@
               "target": "Package",
               "version": "[4.4.0, )"
             },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
             "Font.Awesome": {
               "target": "Package",
               "version": "[5.15.4, )"

@@ -151,3 +151,11 @@ C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-biblioth
 C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\View\InputForm\UserControls\MyDatePicker.baml
 C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\View\InputForm\UserControls\MyComboBox.g.cs
 C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\View\InputForm\UserControls\MyComboBox.baml
+C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\View\InputForm\UserControls\MyTextArea.g.cs
+C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\View\InputForm\UserControls\MyTextArea.baml
+C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\View\InputForm\UserControls\MyComboBoxDispo.g.cs
+C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\View\InputForm\UserControls\MyComboBoxDispo.baml
+C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\bin\Debug\net8.0-windows\EPPlus.dll
+C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\bin\Debug\net8.0-windows\EPPlus.Interfaces.dll
+C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\bin\Debug\net8.0-windows\EPPlus.System.Drawing.dll
+C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\bin\Debug\net8.0-windows\Microsoft.IO.RecyclableMemoryStream.dll

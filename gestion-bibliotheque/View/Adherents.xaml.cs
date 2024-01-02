@@ -97,5 +97,8 @@ namespace gestion_bibliotheque.View
             return 0; // Return 0 or another value to indicate no selection
         }
 
+
+
+
     }
 }

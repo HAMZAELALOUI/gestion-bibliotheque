@@ -26,7 +26,13 @@
     <Compile Update="View\InputForm\UserControls\MyComboBox.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\InputForm\UserControls\MyComboBoxDispo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\InputForm\UserControls\MyDatePicker.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\InputForm\UserControls\MyTextArea.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\InputForm\UserControls\MyTextBox.xaml.cs">
@@ -49,7 +55,13 @@
     <Page Update="View\InputForm\UserControls\MyComboBox.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\InputForm\UserControls\MyComboBoxDispo.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\InputForm\UserControls\MyDatePicker.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\InputForm\UserControls\MyTextArea.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\InputForm\UserControls\MyTextBox.xaml">

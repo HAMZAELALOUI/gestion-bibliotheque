@@ -64,6 +64,7 @@
   <ItemGroup>
     <PackageReference Include="BouncyCastle.Cryptography" Version="2.2.1" />
     <PackageReference Include="ControlzEx" Version="4.4.0" />
+    <PackageReference Include="EPPlus" Version="7.0.5" />
     <PackageReference Include="font-awesome" Version="4.7.0" />
     <PackageReference Include="Font.Awesome" Version="5.15.4" />
     <PackageReference Include="Google.Protobuf" Version="3.21.9" />
