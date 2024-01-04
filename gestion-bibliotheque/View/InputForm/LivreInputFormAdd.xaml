@@ -6,12 +6,12 @@
         Width="1150" Height="500" MinWidth="750" MinHeight="790" WindowStyle="None"
         WindowStartupLocation="CenterScreen" AllowsTransparency="True" Background="Transparent" >
 
-  
+
 
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="0" ResizeBorderThickness="5"/>
     </WindowChrome.WindowChrome>
-  
+
 
     <Border CornerRadius="5" Background="#ffffff" MouseDown="Grid_MouseDown" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
         <Grid>
@@ -122,7 +122,7 @@
                     Caption="Est-ce que le livre est disponible?"
                     Hint="--choisir--"
                     SelectedValue="{Binding IsAvailable, Mode=TwoWay}"/>
-                 <uc:MyComboBox x:Name="txtcategories" 
+                            <uc:MyComboBox x:Name="txtcategories" 
                Grid.Column="0" 
                Grid.Row="5" 
                Caption="Categorie" 
