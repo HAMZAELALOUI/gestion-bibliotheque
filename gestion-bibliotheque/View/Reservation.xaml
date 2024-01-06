@@ -25,10 +25,9 @@
         <Grid Width="300" HorizontalAlignment="Left">
             <ContentControl x:Name="mainContent"/>
             <TextBlock Margin="20 0" VerticalAlignment="Center" Foreground="#B0B9C6" IsHitTestVisible="False"
-             Panel.ZIndex="1" Text="Chercher des Reservation..."
-              />
+       Panel.ZIndex="1" Text="" />
 
-            <TextBox Name="textBoxSearch" Style="{StaticResource searchTextbox}"/>
+            <TextBox Name="textBoxSearch" Style="{StaticResource searchTextbox}" PreviewKeyDown="OnTextBoxKeyDown"/>
 
             <Icon:PackIconMaterial Kind="Magnify" Width="15" Height="15" VerticalAlignment="Center" Margin="0 0 15 0" Foreground="#B0B9C6" HorizontalAlignment="Right" />
         </Grid>

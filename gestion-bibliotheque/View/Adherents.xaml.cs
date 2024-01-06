@@ -5,6 +5,7 @@ using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.DirectoryServices;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,6 +39,34 @@ namespace gestion_bibliotheque.View
             aherentsViewModel.NumberOfAdherents = DatabaseHelper.GetNumberOfAdherents();
             LoadData();
 
+        }
+
+
+
+        private void OnTextBoxKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                // Handle the Enter key press
+                PerformSearch();
+            }
+        }
+
+        private void PerformSearch()
+        {
+            // Get the text from the TextBox and use it to search in the database
+            string searchText = textBoxSearch.Text;
+
+            // Call your database search function with the searchText
+            DatabaseHelper dbHelper = new DatabaseHelper();
+            List <Adherent> searchResults= dbHelper.SearchAdherents(searchText);
+            UpdateDataGrid(searchResults);
+
+        }
+        private void UpdateDataGrid(List<Adherent> searchResults)
+        {
+            // Update the DataGrid with the search results
+            adherentsDataGrid.ItemsSource = searchResults;
         }
 
         public void LoadData()

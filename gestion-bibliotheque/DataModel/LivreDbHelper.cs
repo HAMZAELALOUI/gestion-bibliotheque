@@ -110,25 +110,18 @@ namespace gestion_bibliotheque.DataModel
                 {
                     connection.Open();
 
-                    // Construct the SQL command
-                    string sql = "DELETE FROM lIVRES WHERE LivreID = @LivreID";
-
-                    using (MySqlCommand command = new MySqlCommand(sql, connection))
+                    // First, delete reservations associated with the livre
+                    string deleteReservationsQuery = $"DELETE FROM Reservations WHERE LivreID = {LivreID}";
+                    using (MySqlCommand deleteReservationsCommand = new MySqlCommand(deleteReservationsQuery, connection))
                     {
-                        // Add parameters to the SQL command
-                        command.Parameters.AddWithValue("@LivreID", LivreID);
+                        deleteReservationsCommand.ExecuteNonQuery();
+                    }
 
-                        // Execute the SQL command
-                        int rowsAffected = command.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
-                        {
-                            MessageBox.Show($"lIVRE with ID {LivreID} deleted successfully.");
-                        }
-                        else
-                        {
-                            MessageBox.Show($"No lIVRE found with ID {LivreID}.");
-                        }
+                    // Then, delete the livre itself
+                    string deleteLivreQuery = $"DELETE FROM Livres WHERE LivreID = {LivreID}";
+                    using (MySqlCommand deleteLivreCommand = new MySqlCommand(deleteLivreQuery, connection))
+                    {
+                        deleteLivreCommand.ExecuteNonQuery();
                     }
                 }
             }
@@ -165,6 +158,59 @@ namespace gestion_bibliotheque.DataModel
 
             return numberOfLivres;
         }
+
+
+        public List<Livre> SearchLivres(string searchText)
+        {
+            List<Livre> livres = new List<Livre>();
+
+            using (MySqlConnection connection = new MySqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                string query = $"SELECT Livres.LivreID, Livres.Titre, Livres.Auteur, Categories.CategorieID, Categories.Name AS CategoryName, Livres.EstDisponible, Livres.ReleaseDate, Livres.Prix, Livres.AutresDetailsLivre " +
+                               $"FROM Livres INNER JOIN Categories ON Livres.CategorieID = Categories.CategorieID " +
+                               $"WHERE Livres.Titre LIKE '%{searchText}%' OR " +
+                               $"Livres.Auteur LIKE '%{searchText}%' OR " +
+                               $"Categories.Name LIKE '%{searchText}%' OR " +
+                               $"Livres.EstDisponible LIKE '%{searchText}%' OR " +
+                               $"Livres.ReleaseDate LIKE '%{searchText}%' OR " +
+                               $"Livres.Prix LIKE '%{searchText}%' OR " +
+                               $"Livres.AutresDetailsLivre LIKE '%{searchText}%' OR " +
+                               $"Categories.Name LIKE '%{searchText}%'";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Livre livre = new Livre
+                            {
+                                LivreID = Convert.ToInt32(reader["LivreID"]),
+                                Titre = reader["Titre"].ToString(),
+                                Auteur = reader["Auteur"].ToString(),
+                                EstDisponible = Convert.ToBoolean(reader["EstDisponible"]),
+                                ReleaseDate = Convert.ToDateTime(reader["ReleaseDate"]),
+                                Prix = Convert.ToDouble(reader["Prix"]),
+                                AutresDetailsLivre = reader["AutresDetailsLivre"].ToString(),
+                                Categorie = new Categorie
+                                {
+                                    Name = reader["CategoryName"].ToString(),
+                                    CategorieID = Convert.ToInt32(reader["CategorieID"]) // Include CategorieID if needed
+                                }
+                            };
+
+                            livres.Add(livre);
+                        }
+                    }
+                }
+            }
+
+            return livres;
+        }
+
+
 
     }
 }

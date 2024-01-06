@@ -64,25 +64,18 @@ namespace gestion_bibliotheque.DataModel
                 {
                     connection.Open();
 
-                    // Construct the SQL command
-                    string sql = "DELETE FROM Adherents WHERE AdherentID = @AdherentID";
-
-                    using (MySqlCommand command = new MySqlCommand(sql, connection))
+                    // First, delete reservations associated with the adherent
+                    string deleteReservationsQuery = $"DELETE FROM Reservations WHERE AdherentID = {adherentId}";
+                    using (MySqlCommand deleteReservationsCommand = new MySqlCommand(deleteReservationsQuery, connection))
                     {
-                        // Add parameters to the SQL command
-                        command.Parameters.AddWithValue("@AdherentID", adherentId);
+                        deleteReservationsCommand.ExecuteNonQuery();
+                    }
 
-                        // Execute the SQL command
-                        int rowsAffected = command.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
-                        {
-                            MessageBox.Show($"Adherent with ID {adherentId} deleted successfully.");
-                        }
-                        else
-                        {
-                            MessageBox.Show($"No adherent found with ID {adherentId}.");
-                        }
+                    // Then, delete the adherent itself
+                    string deleteAdherentQuery = $"DELETE FROM Adherents WHERE AdherentID = {adherentId}";
+                    using (MySqlCommand deleteAdherentCommand = new MySqlCommand(deleteAdherentQuery, connection))
+                    {
+                        deleteAdherentCommand.ExecuteNonQuery();
                     }
                 }
             }
@@ -165,10 +158,51 @@ namespace gestion_bibliotheque.DataModel
             return numberOfAdherents;
         }
 
+
+        public List<Adherent> SearchAdherents(string searchText)
+        {
+            List<Adherent> adherents = new List<Adherent>();
+
+            using (MySqlConnection connection = new MySqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                // Adjust your SQL query to include a WHERE clause for searching
+                string query = $"SELECT AdherentID, Prenom, Nom, Email, NumeroTelephone, Adresse, MotDePasse, DateInscription, AutresDetailsAdherent FROM adherents WHERE Nom LIKE '%{searchText}%' OR Prenom LIKE '%{searchText}%' OR Email LIKE '%{searchText}%' OR NumeroTelephone LIKE '%{searchText}%'";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Adherent adherent = new Adherent
+                            {
+                                AdherentID = Convert.ToInt32(reader["AdherentID"]),
+                                Prenom = reader["Prenom"].ToString(),
+                                Nom = reader["Nom"].ToString(),
+                                Email = reader["Email"].ToString(),
+                                NumeroTelephone = reader["NumeroTelephone"].ToString(),
+                                Adresse = reader["Adresse"].ToString(),
+                                MotDePasse = reader["MotDePasse"].ToString(),
+                                DateInscription = Convert.ToDateTime(reader["DateInscription"]),
+                                AutresDetailsAdherent = reader["AutresDetailsAdherent"].ToString()
+                            };
+
+                            adherents.Add(adherent);
+                        }
+                    }
+                }
+            }
+
+            return adherents;
+        }
     }
 
-
-
-
 }
+
+
+
+
+
 

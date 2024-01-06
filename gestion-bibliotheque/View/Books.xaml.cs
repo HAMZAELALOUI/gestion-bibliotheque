@@ -60,6 +60,7 @@ namespace gestion_bibliotheque.View
         {
             
            LivreDbHelper livreDbHelper = new LivreDbHelper();
+
             int LivreIdToDelete = GetSelectedLivreId(); // Implement this method based on your UI
 
             if (LivreIdToDelete > 0)
@@ -176,11 +177,40 @@ namespace gestion_bibliotheque.View
             {
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+
+
+
+
         }
 
 
 
 
+        private void OnTextBoxKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                // Handle the Enter key press
+                PerformSearch();
+            }
+        }
+
+        private void PerformSearch()
+        {
+            // Get the text from the TextBox and use it to search in the database
+            string searchText = textBoxSearch.Text;
+
+            // Call your database search function with the searchText
+            LivreDbHelper dbHelper = new LivreDbHelper();
+            List<Livre> searchResults = dbHelper.SearchLivres(searchText);
+            UpdateDataGrid(searchResults);
+
+        }
+        private void UpdateDataGrid(List<Livre> searchResults)
+        {
+            // Update the DataGrid with the search results
+            LivreDataGrid.ItemsSource = searchResults;
+        }
 
 
 
