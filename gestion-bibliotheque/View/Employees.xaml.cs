@@ -54,7 +54,7 @@ namespace gestion_bibliotheque.View
         private void employees_form(object sender, RoutedEventArgs e)
         {
             // Open a new window (replace 'MainWindow' with the name of your target window)
-            AjouterEmployee ajouterEmployee = new AjouterEmployee();
+           AjouterEmployee ajouterEmployee = new AjouterEmployee();
             ajouterEmployee.ShowDialog();
         }
         private void closeFormUpdate(object sender, RoutedEventArgs e)

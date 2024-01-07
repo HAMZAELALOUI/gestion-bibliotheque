@@ -159,3 +159,9 @@ C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-biblioth
 C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\bin\Debug\net8.0-windows\EPPlus.Interfaces.dll
 C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\bin\Debug\net8.0-windows\EPPlus.System.Drawing.dll
 C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\bin\Debug\net8.0-windows\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\View\DashboardContent.g.cs
+C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\View\InputForm\UserControls\MyPasswordBox.g.cs
+C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\View\DashboardContent.baml
+C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\View\InputForm\UserControls\MyPasswordBox.baml
+C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\View\InputForm\InputUpdateLivreForm.g.cs
+C:\Users\hp\Desktop\EMSI courses\dotNet\tp\gestion-bibliotheque\gestion-bibliotheque\obj\Debug\net8.0-windows\View\InputForm\InputUpdateLivreForm.baml

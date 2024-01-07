@@ -1,7 +1,9 @@
 ﻿using gestion_bibliotheque.DataModel;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +24,12 @@ namespace gestion_bibliotheque.View
     /// </summary>
     public partial class Reservation : UserControl
     {
+
+        static Reservation()
+        {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+        }
+
         ReservationDbHelper reservationDbHelper = new ReservationDbHelper();
         private ObservableCollection<DataModel.Reservation> resevationCollection;
         public Reservation()
@@ -71,5 +79,75 @@ namespace gestion_bibliotheque.View
             ReservationsDataGrid.ItemsSource = searchResults;
         }
 
+
+        private void ExportToExcel(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                // Create a new ExcelPackage
+                using (var package = new ExcelPackage())
+                {
+                    // Add a new worksheet to the package
+                    var worksheet = package.Workbook.Worksheets.Add("ResrvationData");
+
+                    // Write header row
+                    for (int i = 1; i <= ReservationsDataGrid.Columns.Count; i++)
+                    {
+                        worksheet.Cells[1, i].Value = ReservationsDataGrid.Columns[i - 1].Header;
+                    }
+
+                    // Write data rows
+                    var Reservations = (List<DataModel.Reservation>)ReservationsDataGrid.ItemsSource;
+
+                    for (int row = 0; row < Reservations.Count; row++)
+                    {
+                        for (int col = 1; col <= ReservationsDataGrid.Columns.Count; col++)
+                        {
+                            var column = ReservationsDataGrid.Columns[col - 1];
+
+                            if (column is DataGridBoundColumn)
+                            {
+                                var binding = (column as DataGridBoundColumn)?.Binding as System.Windows.Data.Binding;
+
+                                if (binding != null)
+                                {
+                                    var property = binding?.Path?.Path;
+
+                                    if (property != null)
+                                    {
+                                        var value = Reservations[row]?.GetType()?.GetProperty(property)?.GetValue(Reservations[row], null);
+
+                                        worksheet.Cells[row + 2, col].Value = value;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+
+                    // Save the Excel package to a file
+                    var saveFileDialog = new Microsoft.Win32.SaveFileDialog
+                    {
+                        Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*",
+                        Title = "Export Livres Data",
+                        FileName = "ReservationDataExport"
+                    };
+
+                    if (saveFileDialog.ShowDialog() == true)
+                    {
+                        package.SaveAs(new FileInfo(saveFileDialog.FileName));
+                        MessageBox.Show("Data exported successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+
+
+
+        }
     }
 }

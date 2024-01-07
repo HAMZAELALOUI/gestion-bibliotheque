@@ -14,7 +14,13 @@
     <Compile Update="View\AjouterLivreForm.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\DashboardContent.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\InputForm\InputFormAdherentAdd.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\InputForm\InputUpdateLivreForm.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\InputForm\LivreInputFormAdd.xaml.cs">
@@ -32,6 +38,9 @@
     <Compile Update="View\InputForm\UserControls\MyDatePicker.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\InputForm\UserControls\MyPasswordBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\InputForm\UserControls\MyTextArea.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -43,7 +52,13 @@
     <Page Update="View\AjouterLivreForm.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\DashboardContent.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\InputForm\InputFormAdherentAdd.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\InputForm\InputUpdateLivreForm.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\InputForm\LivreInputFormAdd.xaml">
@@ -59,6 +74,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\InputForm\UserControls\MyDatePicker.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\InputForm\UserControls\MyPasswordBox.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\InputForm\UserControls\MyTextArea.xaml">

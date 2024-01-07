@@ -49,8 +49,9 @@ namespace gestion_bibliotheque.View.InputForm
         }
 
 
+     
 
-       
+
 
         private void OnAjouterButtonClick(object sender, RoutedEventArgs e)
         {

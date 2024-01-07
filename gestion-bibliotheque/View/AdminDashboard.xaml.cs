@@ -26,6 +26,17 @@ namespace gestion_bibliotheque.View
 
         }
 
+
+        private void Show_dashboard(object sender, EventArgs e)
+        {
+            dynamicContent.Content = new DashboardContent();
+        }
+
+        public void SetContent(UserControl content)
+        {
+            dynamicContent.Content = content;
+        }
+
         private bool IsMaximize = false;
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {

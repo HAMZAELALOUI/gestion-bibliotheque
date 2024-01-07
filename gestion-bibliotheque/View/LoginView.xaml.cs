@@ -26,12 +26,12 @@ namespace gestion_bibliotheque.View
         public LoginView()
         {
             InitializeComponent();
-           
+
 
         }
-        private void Window_MouseDown(object sender,MouseButtonEventArgs e)
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if(e.LeftButton == MouseButtonState.Pressed)
+            if (e.LeftButton == MouseButtonState.Pressed)
             {
                 DragMove();
             }
@@ -47,10 +47,10 @@ namespace gestion_bibliotheque.View
         }
         private void pswd_PasswordChanged(object sender, RoutedEventArgs e)
         {
-           
+
         }
 
-        private void btnMinimize_Click(Object sender ,RoutedEventArgs e)
+        private void btnMinimize_Click(Object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
         }
@@ -62,11 +62,13 @@ namespace gestion_bibliotheque.View
 
             if (IsValidUser(username, password))
             {
-                // Open a new window (replace 'MainWindow' with the name of your target window)
                 AdminDashboard adminDashboard = new AdminDashboard();
-                this.Close();
+                DashboardContent dashboardContent = new DashboardContent();
+                adminDashboard.SetContent(dashboardContent);
                 adminDashboard.Show();
-            } else
+                this.Close();
+            }
+            else
             {
                 // Failed login, show error message or perform other actions
                 MessageBox.Show("Invalid username or password!");

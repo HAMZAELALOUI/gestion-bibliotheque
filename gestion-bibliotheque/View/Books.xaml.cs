@@ -212,6 +212,12 @@ namespace gestion_bibliotheque.View
             LivreDataGrid.ItemsSource = searchResults;
         }
 
+        private void UpdateForm(object sender, RoutedEventArgs e)
+        {
+           InputUpdateLivreForm form = new InputUpdateLivreForm();
+            form.ShowDialog();
+        }
+
 
 
     }
