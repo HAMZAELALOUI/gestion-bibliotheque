@@ -93,9 +93,6 @@ Grid.Row="5">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Margin="5 0 0 0" Style="{StaticResource gridEditButton}" Cursor="Hand" Click="editeReservation">
-                                    <Icon:PackIconMaterial Kind="PencilBoxOutline" Style="{StaticResource gridButtonIcon}"/>
-                                </Button>
                                 <Button Margin="5 0 0 0" Style="{StaticResource gridRemoveButton}" Cursor="Hand" Click="Delete">
                                     <Icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridButtonIcon}"/>
                                 </Button>

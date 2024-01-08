@@ -1,4 +1,5 @@
-﻿using System;
+﻿using gestion_bibliotheque.DataModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -23,7 +24,11 @@ namespace gestion_bibliotheque.ViewModel
             }
         }
     }
-       
+
+        public void UpdateNumberOfAdherents()
+        {
+            NumberOfAdherents =DatabaseHelper.GetNumberOfAdherents();
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

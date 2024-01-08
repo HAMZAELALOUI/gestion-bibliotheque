@@ -1,4 +1,5 @@
 ﻿using gestion_bibliotheque.DataModel;
+using gestion_bibliotheque.ViewModel;
 using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,7 @@ namespace gestion_bibliotheque.View
         public Reservation()
         {
             InitializeComponent();
+
             LoadData();
         }
 
@@ -49,7 +51,40 @@ namespace gestion_bibliotheque.View
 
         public void membersDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e) { }
         public void editeReservation(object sender, RoutedEventArgs e) { }
-        public void Delete(object sender, RoutedEventArgs e) { }
+
+
+        private void Delete(object sender, RoutedEventArgs e)
+        {
+            ReservationDbHelper reservationDbHelper = new ReservationDbHelper();
+            int reservationIdToDelete = GetSelectedReservationId(); // Implement this method based on your UI
+
+            if (reservationIdToDelete > 0)
+            {
+                reservationDbHelper.DeleteReservation(reservationIdToDelete);
+                ReservationViewModel reservationViewModel = new ReservationViewModel();
+                DataContext = reservationViewModel;
+                LoadData();
+            }
+            else
+            {
+                MessageBox.Show("Please select reservation to delete.", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+        public int GetSelectedReservationId()
+        {
+            // Check if any item is selected
+            if (ReservationsDataGrid.SelectedItem != null)
+            {
+                // Assuming Adherent has an AdherentID property
+                if (ReservationsDataGrid.SelectedItem is DataModel.Reservation selectedReservation)
+                {
+                    return selectedReservation.ReservationID;
+                }
+            }
+
+            return 0; // Return 0 or another value to indicate no selection
+        }
+
 
 
 
@@ -149,5 +184,7 @@ namespace gestion_bibliotheque.View
 
 
         }
+
+    
     }
 }

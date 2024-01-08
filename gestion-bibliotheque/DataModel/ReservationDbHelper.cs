@@ -4,6 +4,7 @@ using MySqlConnector;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace gestion_bibliotheque.DataModel
 {
@@ -143,5 +144,74 @@ namespace gestion_bibliotheque.DataModel
             return reservations;
         }
 
+        public bool DeleteReservation(int reservationID)
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    // Your SQL query to delete a reservation by ID
+                    string sqlQuery = "DELETE FROM Reservations WHERE ReservationID = @ReservationID";
+
+                    using (MySqlCommand command = new MySqlCommand(sqlQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@ReservationID", reservationID);
+
+                        // Execute the query
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        // Check if the deletion was successful
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Reservation deleted successfully.");
+                            return true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Reservation not found or deletion failed.");
+                            return false;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+                return false;
+            }
+        }
+
+        public static int GetNumberOfReservation()
+        {
+            int numberOfReservations = 0;
+
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    // Your SQL query to get the number of reservation
+                    string sqlQuery = "SELECT COUNT(*) FROM reservations";
+
+                    using (MySqlCommand command = new MySqlCommand(sqlQuery, connection))
+                    {
+                        // Execute the query and get the result
+                        numberOfReservations = Convert.ToInt32(command.ExecuteScalar());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+
+            return numberOfReservations;
+        }
     }
 }
+
+    
+

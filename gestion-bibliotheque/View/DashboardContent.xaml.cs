@@ -24,13 +24,21 @@ namespace gestion_bibliotheque.View
     {
         public DashboardContent()
         {
-            AherentsViewModel aherentsViewModel = new AherentsViewModel();
 
             InitializeComponent();
-            aherentsViewModel.NumberOfAdherents = DatabaseHelper.GetNumberOfAdherents();
+            SetDashboardData();
+        }
+
+        private void SetDashboardData()
+        {
+            DashboardViewModel dashboardViewModel = new DashboardViewModel();
+            DataContext = dashboardViewModel;
+            // Set data for individual ViewModels
+            dashboardViewModel.ReservationViewModel.NumberOfReservations = ReservationDbHelper.GetNumberOfReservation();
+            dashboardViewModel.AherentsViewModel.NumberOfAdherents = DatabaseHelper.GetNumberOfAdherents();
+            dashboardViewModel.LivreViewModel.NumberOfLivre = LivreDbHelper.GetNumberOfLivres();
 
 
         }
-
     }
 }

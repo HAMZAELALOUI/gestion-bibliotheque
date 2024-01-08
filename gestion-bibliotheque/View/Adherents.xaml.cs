@@ -35,7 +35,7 @@ namespace gestion_bibliotheque.View
             // Assuming you create an instance of your ViewModel here
             AherentsViewModel aherentsViewModel = new AherentsViewModel();
             DataContext = aherentsViewModel;
-            // Set the initial value (replace this with your actual logic)
+            // Set the initial value
             aherentsViewModel.NumberOfAdherents = DatabaseHelper.GetNumberOfAdherents();
             LoadData();
 
@@ -85,8 +85,6 @@ namespace gestion_bibliotheque.View
 
         private void adherent_form(object sender, RoutedEventArgs e)
         {
-
-            // Open a new window (replace 'MainWindow' with the name of your target window)
             InputFormAdherentAdd inputFormAdherentAdd = new InputFormAdherentAdd();
             inputFormAdherentAdd.ShowDialog();  
         }

@@ -11,7 +11,7 @@ namespace gestion_bibliotheque.ViewModel
     {
         private int numberOfLivre;
 
-        public int NmberOfLivre
+        public int NumberOfLivre
         {
             get { return numberOfLivre; }
             set
@@ -19,7 +19,7 @@ namespace gestion_bibliotheque.ViewModel
                 if (value != numberOfLivre)
                 {
                     numberOfLivre = value;
-                    OnPropertyChanged(nameof(NmberOfLivre));
+                    OnPropertyChanged(nameof(NumberOfLivre));
                 }
             }
         }

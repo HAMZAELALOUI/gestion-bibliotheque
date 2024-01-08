@@ -70,7 +70,7 @@ namespace gestion_bibliotheque.View
                LivreViewModel viewModel = new LivreViewModel();
                 DataContext = viewModel;
                 // Set the initial value
-                viewModel.NmberOfLivre= LivreDbHelper.GetNumberOfLivres();
+                viewModel.NumberOfLivre= LivreDbHelper.GetNumberOfLivres();
                 LoadData();
             }
             else
