@@ -122,7 +122,7 @@
                     Caption="Est-ce que le livre est disponible?"
                     Hint="--choisir--"
                     SelectedValue="{Binding IsAvailable, Mode=TwoWay}"/>
-                            <uc:MyComboBox x:Name="txtcategories" 
+                            <!--  <uc:MyComboBox x:Name="txtcategories" 
                Grid.Column="0" 
                Grid.Row="5" 
                Caption="Categorie" 
@@ -130,9 +130,16 @@
                ItemsSource="{Binding Categories}" 
                DisplayMember="DisplayMember" 
                SelectedItemId="{Binding SelectedCategoryID, Mode=TwoWay}"
-               CustomSelectionChanged="OnCategoryCustomSelectionChanged" />
+               CustomSelectionChanged="OnCategoryCustomSelectionChanged" />-->
 
-
+                            <ComboBox x:Name="txtcategories" Grid.Column="0" Grid.Row="5" Height="28" VerticalAlignment="Center" RenderTransformOrigin="0.497,1.179" Margin="21,0,26,0">
+                                <!-- DataTemplate to customize the appearance of each item -->
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding DisplayMember}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
                             <uc:MyDatePicker x:Name="txtPublication"   Grid.Column="1" Grid.Row="2" Caption="Date de publication" Hint="Date de publication"/>
                             <uc:MyTextBox x:Name="txtPrix" Text="{Binding Prix}" Grid.Column="1" Grid.Row="3" Caption="Prix" Hint="entre le prix"/>
                             <uc:MyTextArea x:Name="txtDescription" Text="{Binding Description}" Grid.Column="1" Grid.Row="3" Caption="Description" Hint="Description" Margin="0,77,0,0" Grid.RowSpan="3"/>

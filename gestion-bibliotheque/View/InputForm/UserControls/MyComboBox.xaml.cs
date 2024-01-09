@@ -23,7 +23,7 @@ namespace gestion_bibliotheque.View.InputForm.UserControls
     public partial class MyComboBox : UserControl
     {
 
-        public static readonly DependencyProperty TextProperty =
+      /*  public static readonly DependencyProperty TextProperty =
             DependencyProperty.Register("Text", typeof(string), typeof(MyComboBox));
 
         public string Text
@@ -138,20 +138,10 @@ namespace gestion_bibliotheque.View.InputForm.UserControls
             }
 
 
-        }
-
-       public int GetSelectedAdherentId()
-        {
-            if (comboBox.SelectedItem != null)
-            {
-                if (comboBox.SelectedItem is Categorie selectedCategory)
-                {
-                    return selectedCategory.CategorieID;
-                }
-            }
-            return 0; // Return 0 or another value to indicate no selection
-        }
+        }*/
 
       
+
+
     }
 }

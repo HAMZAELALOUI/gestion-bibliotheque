@@ -10,7 +10,7 @@
         <BooleanToVisibilityConverter x:Key="MyBoolToVisibilityConverter" />
     </UserControl.Resources>
 
-    <StackPanel Margin="20 10">
+   <!-- <StackPanel Margin="20 10">
         <TextBlock Text="{Binding Path=Caption, ElementName=myComboBox}" Foreground="#97A5B4" FontSize="13" Margin="0 0 0 8"/>
         <Grid>
             <TextBlock Margin="13 0" VerticalAlignment="Center" Foreground="#868686" IsHitTestVisible="False" Panel.ZIndex="1"
@@ -20,8 +20,7 @@
           SelectedItem="{Binding Text, RelativeSource={RelativeSource AncestorType=UserControl}}"
           ItemsSource="{Binding ItemsSource, ElementName=myComboBox}"
           SelectionChanged="ComboBox_SelectionChanged">
-                <!-- DataTemplate to customize the appearance of each item -->
-                <ComboBox.ItemTemplate>
+             <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding DisplayMember}" />
                     </DataTemplate>
@@ -30,5 +29,5 @@
 
 
         </Grid>
-    </StackPanel>
+    </StackPanel>-->
 </UserControl>

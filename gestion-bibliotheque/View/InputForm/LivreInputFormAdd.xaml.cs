@@ -73,15 +73,14 @@ namespace gestion_bibliotheque.View.InputForm
         private void OnAjouterButtonClick(object sender, RoutedEventArgs e)
         {
 
-            
+
             DateTime releaseDate = txtPublication.SelectedDate ?? DateTime.Now;
             double prix = double.Parse(txtPrix.Text);
-            int categorieID = txtcategories.SelectedItemId;
+            int categorieID = GetSelectedId();
             // Cast to int
             bool estDisponible = IsAvailable;
 
             MessageBox.Show(categorieID.ToString());
-
             // Call the InsertLivreData method from LivreDbHelper
             LivreDbHelper dbHelper = new LivreDbHelper();
             dbHelper.InsertLivreData(txtTitre.Text, txtAuteur.Text, categorieID, estDisponible, releaseDate, prix, txtDescription.Text);
@@ -103,10 +102,25 @@ namespace gestion_bibliotheque.View.InputForm
 
         private void OnCategoryCustomSelectionChanged(object sender, RoutedEventArgs e)
         {
-             
-          
+
+
+        }
+
+        public int GetSelectedId()
+        {
+            // Check if any item is selected
+            if (txtcategories.SelectedCategory != null)
+            {
+                if (txtcategories.SelectedCategory is Categorie selectedCategorie)
+                {
+                    return selectedCategorie.CategorieID;
+                }
+            }
+
+            return 0; // Return 0 or another value to indicate no selection
         }
 
 
     }
+
 }

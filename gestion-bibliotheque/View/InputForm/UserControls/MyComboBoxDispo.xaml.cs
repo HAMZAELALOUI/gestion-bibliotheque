@@ -21,6 +21,10 @@ namespace gestion_bibliotheque.View.InputForm.UserControls
     /// </summary>
     public partial class MyComboBoxDispo : UserControl
     {
+        public MyComboBoxDispo()
+        {
+            InitializeComponent();
+        }
 
         public static readonly DependencyProperty TextProperty =
            DependencyProperty.Register("Text", typeof(string), typeof(MyComboBoxDispo));
@@ -52,9 +56,6 @@ namespace gestion_bibliotheque.View.InputForm.UserControls
             get { return GetValue(SelectedValueProperty); }
             set { SetValue(SelectedValueProperty, value); }
         }
-        public MyComboBoxDispo()
-        {
-            InitializeComponent();
-        }
+     
     }
 }
