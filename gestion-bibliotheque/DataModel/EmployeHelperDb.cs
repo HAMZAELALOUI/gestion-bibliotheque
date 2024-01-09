@@ -141,6 +141,42 @@ namespace gestion_bibliotheque.DataModel
             }
         }
 
+        public void UpdateEmploye(int employeID, string newNom, string newPrenom, string newRole, string newAutresDetailsEmploye)
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    // SQL query with parameters for update
+                    string sqlQuery = "UPDATE employes SET Nom = @Nom, Prenom = @Prenom, Role = @Role, AutresDetailsEmploye = @AutresDetailsEmploye " +
+                                      "WHERE EmployeID = @EmployeID";
+
+                    using (MySqlCommand command = new MySqlCommand(sqlQuery, connection))
+                    {
+                        // Add parameters to the query
+                        command.Parameters.AddWithValue("@EmployeID", employeID);
+                        command.Parameters.AddWithValue("@Nom", newNom);
+                        command.Parameters.AddWithValue("@Prenom", newPrenom);
+                        command.Parameters.AddWithValue("@Role", newRole);
+                        command.Parameters.AddWithValue("@AutresDetailsEmploye", newAutresDetailsEmploye);
+
+                        // Execute the query
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+        }
+
+
+
+
+
         public List<Employe> SearchEmployes(string searchText)
         {
             List<Employe> employes = new List<Employe>();

@@ -88,6 +88,18 @@ namespace gestion_bibliotheque.View
 
         }
 
+        private void Edite_form(object sender, RoutedEventArgs e)
+        {
+            // Get the selected ID
+            int selectedID = GetSelectedId();
+
+            // Navigate to the next window with the selected ID
+           
+            UpdateEmployeeForm updateEmployeeForm = new UpdateEmployeeForm(selectedID);
+            updateEmployeeForm.ShowDialog();
+
+        }
+
         public int GetSelectedEmployeID()
         {
             // Check if any item is selected
@@ -129,6 +141,21 @@ namespace gestion_bibliotheque.View
             // Update the DataGrid with the search results
             employeeDataGrid.ItemsSource = searchResults;
         }
+        public int GetSelectedId()
+        {
+            // Check if any item is selected
+            if (employeeDataGrid.SelectedItem != null)
+            {
+                // Assuming Adherent has an AdherentID property
+                if (employeeDataGrid.SelectedItem is Employe selectedEmployee)
+                {
+                    return selectedEmployee.EmployeID;
+                }
+            }
+
+            return 0; // Return 0 or another value to indicate no selection
+        }
     }
+
 }
 
