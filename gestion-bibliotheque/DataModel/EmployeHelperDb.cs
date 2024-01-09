@@ -110,5 +110,72 @@ namespace gestion_bibliotheque.DataModel
 
             return numberOfEmployees;
         }
+        public void InsertEmploye(string Nom, string Prenom, string Role, string AutresDetailsEmploye)
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    // SQL query with parameters
+                    string sqlQuery = "INSERT INTO employes (Nom, Prenom, Role, AutresDetailsEmploye) " +
+                                      "VALUES (@Nom, @Prenom, @Role, @AutresDetailsEmploye)";
+
+                    using (MySqlCommand command = new MySqlCommand(sqlQuery, connection))
+                    {
+                        // Add parameters to the query
+                        command.Parameters.AddWithValue("@Nom", Nom);
+                        command.Parameters.AddWithValue("@Prenom", Prenom);
+                        command.Parameters.AddWithValue("@Role", Role);
+                        command.Parameters.AddWithValue("@AutresDetailsEmploye",AutresDetailsEmploye);
+
+                        // Execute the query
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+        }
+
+        public List<Employe> SearchEmployes(string searchText)
+        {
+            List<Employe> employes = new List<Employe>();
+
+            using (MySqlConnection connection = new MySqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                // Adjust your SQL query to include a WHERE clause for searching
+                string query = $"SELECT EmployeID, Nom, Prenom, Role, AutresDetailsEmploye FROM employes WHERE Nom LIKE '%{searchText}%' OR Prenom LIKE '%{searchText}%' OR Role LIKE '%{searchText}%'";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Employe employe = new Employe
+                            {
+                                EmployeID = Convert.ToInt32(reader["EmployeID"]),
+                                Nom = reader["Nom"].ToString(),
+                                Prenom = reader["Prenom"].ToString(),
+                                Role = reader["Role"].ToString(),
+                                AutresDetailsEmploye = reader["AutresDetailsEmploye"].ToString()
+                            };
+
+                            employes.Add(employe);
+                        }
+                    }
+                }
+            }
+
+            return employes;
+        }
+
     }
 }
+

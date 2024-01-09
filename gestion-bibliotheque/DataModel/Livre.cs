@@ -40,6 +40,10 @@ namespace gestion_bibliotheque.DataModel
             get { return Categorie.Name; }
         }
 
+        public int GetCategoryId
+        {
+            get { return Categorie.CategorieID; }
+        }
 
 
 

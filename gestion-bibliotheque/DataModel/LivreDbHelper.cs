@@ -27,7 +27,6 @@ namespace gestion_bibliotheque.DataModel
 
                     using (MySqlCommand command = new MySqlCommand(insertQuery, connection))
                     {
-                        // Set parameter values based on your Livre model properties
                         command.Parameters.AddWithValue("@Titre", Titre);
                         command.Parameters.AddWithValue("@Auteur", Auteur);
                         command.Parameters.AddWithValue("@CategorieID", CategorieID);

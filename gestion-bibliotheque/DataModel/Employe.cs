@@ -12,7 +12,6 @@ namespace gestion_bibliotheque.DataModel
         public int EmployeID { get; set; }
         public string Nom { get; set; }
         public string Prenom { get; set; }
-        public string MotDePasse { get; set; }
         public string Role { get; set; }
         public string AutresDetailsEmploye { get; set; }
     }
