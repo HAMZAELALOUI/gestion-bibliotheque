@@ -78,7 +78,6 @@ namespace gestion_bibliotheque.View
 
                 // Optionally, show a success message
                 MessageBox.Show("Employe ajouté avec succès.", "Succès", MessageBoxButton.OK, MessageBoxImage.Information);
-
                 // Close the window or perform other actions as needed
                 Close();
             }

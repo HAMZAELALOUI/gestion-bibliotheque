@@ -86,6 +86,9 @@ namespace gestion_bibliotheque.View
                 // Optionally, show a success message
                 MessageBox.Show("Employe Modifie avec succès.", "Succès", MessageBoxButton.OK, MessageBoxImage.Information);
 
+                Employees employees=new Employees();
+                employees.LoadData();
+
                 // Close the window or perform other actions as needed
                 Close();
             }
